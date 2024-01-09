@@ -19,3 +19,45 @@ C:\Users\Amando Eriksson\OneDrive - GIBZ\M450\CSSkinsTest\CSSkinsTest\obj\Debug\
 C:\Users\Amando Eriksson\OneDrive - GIBZ\M450\CSSkinsTest\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.pdb
 C:\Users\Amando Eriksson\OneDrive - GIBZ\M450\CSSkinsTest\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.genruntimeconfig.cache
 C:\Users\Amando Eriksson\OneDrive - GIBZ\M450\CSSkinsTest\CSSkinsTest\obj\Debug\net7.0\ref\CS2SkinPriceComparison.dll
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\selenium-manager\linux\selenium-manager
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\selenium-manager\macos\selenium-manager
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\selenium-manager\windows\selenium-manager.exe
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.exe
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.deps.json
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.runtimeconfig.json
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.dll
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.pdb
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\WebDriver.dll
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.csproj.AssemblyReference.cache
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.AssemblyInfoInputs.cache
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.AssemblyInfo.cs
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.csproj.CoreCompileInputs.cache
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.csproj.CopyComplete
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.dll
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\refint\CS2SkinPriceComparison.dll
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.pdb
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.genruntimeconfig.cache
+C:\Users\IFLCWA\Downloads\CS2SkinPriceComparison-main\CS2SkinPriceComparison-main\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\ref\CS2SkinPriceComparison.dll
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\selenium-manager\linux\selenium-manager
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\selenium-manager\macos\selenium-manager
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\selenium-manager\windows\selenium-manager.exe
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.exe
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.deps.json
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.runtimeconfig.json
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.dll
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\CS2SkinPriceComparison.pdb
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\bin\Debug\net7.0\WebDriver.dll
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.csproj.AssemblyReference.cache
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.AssemblyInfoInputs.cache
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.AssemblyInfo.cs
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.csproj.CoreCompileInputs.cache
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.csproj.CopyComplete
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.dll
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\refint\CS2SkinPriceComparison.dll
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.pdb
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\CS2SkinPriceComparison.genruntimeconfig.cache
+C:\Users\IFLCWA\OneDrive - Innflow AG\Dokumente\GIBZ\m450\CS2SkinPriceComparison\CS2SkinPriceComparison\CSSkinsTest\obj\Debug\net7.0\ref\CS2SkinPriceComparison.dll

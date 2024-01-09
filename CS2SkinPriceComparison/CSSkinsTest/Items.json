@@ -1,0 +1,81 @@
+﻿{
+  "Gun Skin": {
+    "Rifle": {
+      "AK-47": "AK-47",
+      "M4A4": "M4A4",
+      "M4A1-S": "M4A1-S",
+      "AUG": "AUG",
+      "SG 553": "SG 553",
+      "FAMAS": "FAMAS",
+      "Galil AR": "Galil AR",
+      "SSG 08": "SSG 08",
+      "AWP": "AWP",
+      "SCAR-20": "SCAR-20",
+      "G3SG1": "G3SG1"
+    },
+    "Pistol": {
+      "Glock-18": "Glock-18",
+      "USP-S": "USP-S",
+      "P2000": "P2000",
+      "Dual Berettas": "Dual Berettas",
+      "P250": "P250",
+      "Tec-9": "Tec-9",
+      "CZ75-Auto": "CZ75-Auto",
+      "Five-SeveN": "Five-SeveN",
+      "Desert Eagle": "Desert Eagle",
+      "R8 Revolver": "R8 Revolver"
+    },
+    "SMG": {
+      "MAC-10": "MAC-10",
+      "MP9": "MP9",
+      "MP7": "MP7",
+      "UMP-45": "UMP-45",
+      "P90": "P90",
+      "PP-Bizon": "PP-Bizon"
+    },
+    "Heavy": {
+      "XM1014": "XM1014",
+      "MAG-7": "MAG-7",
+      "Sawed-Off": "Sawed-Off",
+      "Nova": "Nova",
+      "M249": "M249",
+      "Negev": "Negev"
+    }
+  },
+  "Knife": {
+    "Bayonet": "Bayonet",
+    "Flip Knife": "Flip Knife",
+    "Gut Knife": "Gut Knife",
+    "Karambit": "Karambit",
+    "M9 Bayonet": "M9 Bayonet",
+    "Huntsman Knife": "Huntsman Knife",
+    "Falchion Knife": "Falchion Knife",
+    "Bowie Knife": "Bowie Knife",
+    "Butterfly Knife": "Butterfly Knife",
+    "Shadow Daggers": "Shadow Daggers",
+    "Navaja Knife": "Navaja Knife",
+    "Stiletto Knife": "Stiletto Knife",
+    "Ursus Knife": "Ursus Knife",
+    "Talon Knife": "Talon Knife",
+    "Classic Knife": "Classic Knife",
+    "Paracord Knife": "Paracord Knife",
+    "Survival Knife": "Survival Knife",
+    "Nomad Knife": "Nomad Knife",
+    "Skeleton Knife": "Skeleton Knife"
+  },
+  "Gloves": {
+    "Bloodhound Gloves": "Bloodhound Gloves",
+    "Sport Gloves": "Sport Gloves",
+    "Driver Gloves": "Driver Gloves",
+    "Hand Wraps": "Hand Wraps",
+    "Moto Gloves": "Moto Gloves",
+    "Specialist Gloves": "Specialist Gloves",
+    "Hydra Gloves": "Hydra Gloves",
+    "Broken Fang Gloves": "Broken Fang Gloves"
+  },
+  "Container": {
+    "Case": "Case",
+    "Capsule": "Capsule",
+    "Souvenir Package": "Souvenir Package"
+  },
+}
