@@ -68,7 +68,7 @@ public class UserInput
             }
             else if(subType[selectedSubType] is JValue)
             {
-                
+                SelectSkin((string)subType[selectedSubType]);
             }
             else
             {
@@ -77,4 +77,18 @@ public class UserInput
             }
         }
     }
+
+    private void SelectSkin(string item)
+    {
+        Console.WriteLine("Enter the name of the skin (Case Sensitive):");
+
+        string skinName = Console.ReadLine();
+        
+        if (skinName != null)
+        {
+            Console.WriteLine(item);
+        }
+
+        Skin skin = new Skin();
+    } 
 }
