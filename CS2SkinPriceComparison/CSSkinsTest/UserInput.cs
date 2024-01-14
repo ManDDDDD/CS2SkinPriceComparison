@@ -87,7 +87,7 @@ public class UserInput
 
     private void SelectSkin(string item)
     {
-        Console.WriteLine("Enter the name of the skin (Case Sensitive):");
+        Console.WriteLine("Enter the name of the skin:");
 
         string skinName = Console.ReadLine();
 
@@ -99,8 +99,13 @@ public class UserInput
         {
             skin.Name = skinName;
             Selenium selenium = new Selenium();
-            // selenium.GetPricesFromSkinBaron(skin);
-            // selenium.GetPricesFromSkinPort(skin);
+            string skinPortPrice = selenium.GetPricesFromSkinPort(skin);
+            string skinBaronPrice = selenium.GetPricesFromSkinBaron(skin);
+            string steamPrice = selenium.GetPricesFromSteam(skin);
+
+            Console.WriteLine($"SkinPort Price: {skinPortPrice}");
+            Console.WriteLine($"SkinBaron Price: {skinBaronPrice}");
+            Console.WriteLine($"Steam Price: {steamPrice}");
         }
         
     } 
