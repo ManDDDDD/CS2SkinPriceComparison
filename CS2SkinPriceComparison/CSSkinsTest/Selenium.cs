@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Collections.ObjectModel;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
@@ -9,14 +10,35 @@ public class Selenium
     public string GetPricesFromSkinPort(Skin item)
     {
         string skinPortUrl = DefineSkinPortUrl(item);
-        IWebDriver driver = new ChromeDriver();
-        driver.Url = skinPortUrl;
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+        int attempts = 0;
+        string price = "";
+        while (attempts < 3)
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = skinPortUrl;
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+                IWebElement webElement = wait.Until(driver =>
+                    driver.FindElement(By.ClassName(
+                        "ItemPreview-priceValue")));
+                    price = webElement.FindElement(By.ClassName("Tooltip-link")).Text;
+                    attempts = 3;
+                    driver.Close();
+                    break;
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                driver.Close();
+            }
 
-        IWebElement webElement = wait.Until(driver => driver.FindElement(By.XPath("//*[@id=\"content\"]/div/div[3]/div[2]/div[1]/div/div/div[1]/a/div[1]/div[3]/div[1]/div[1]/div[1]")));
+            attempts++;
+        }
 
-        string price = webElement.Text;
-
+        if (price == "")
+        {
+            price = "Couldn't get price";
+        }
         return price;
     }
 
@@ -32,20 +54,48 @@ public class Selenium
     public string GetPricesFromSkinBaron(Skin item)
     {
         string skinBaronUrl = DefineSkinBaronUrl(item);
-        IWebDriver driver = new ChromeDriver();
-        driver.Url = skinBaronUrl;
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+        int attempts = 0;
+        string price = "";
+        while (attempts < 3)
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = skinBaronUrl;
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            
+            try
+            {
+                IWebElement webElement = wait.Until(driver => driver.FindElement(By.XPath("//*[@id=\"offer-container\"]/sb-products-item-card[1]/div/a/div/div[5]/div/span")));
 
-        IWebElement webElement = wait.Until(driver => driver.FindElement(By.XPath("//*[@id=\"offer-container\"]/sb-products-item-card[1]/div/a/div/div[5]/div/span")));
+                price = webElement.Text;
+                attempts = 3;
+                driver.Close();
+                break;
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                driver.Close();
+            }
 
-        string price = webElement.Text;
+            attempts++;
+        }
+        if(price == "")
+        {
+            price = "Couldn't get price";
+        }
 
         return price;
     }
 
     public string DefineSkinBaronUrl(Skin item)
     {
-        string skinBaronName = item.Name.Trim().Replace(" ", "-").ToLower();
+        string skinBaronName = item.Name.Trim().ToLower();
+        if (item.Name.Contains(" "))
+        {
+            string[] splitted = item.Name.Split(" ");
+            FirstCharToUpper(splitted[1]);
+            skinBaronName = string.Join("-", splitted);
+        }
+
         skinBaronName = FirstCharToUpper(skinBaronName);
         string skinBaronUrl = $"https://skinbaron.de/en/csgo/{item.SubCategory}/{item.Item}/{skinBaronName}?sort=CF";
 
@@ -54,15 +104,36 @@ public class Selenium
 
     public string GetPricesFromSteam(Skin item)
     {
+        int attempts = 0;
+        string price = "";
         string steamUrl = DefineSteamUrl(item);
-        IWebDriver driver = new ChromeDriver();
-        driver.Url = steamUrl;
-        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
 
-        IWebElement webElement = wait.Until(driver => driver.FindElement(By.XPath("//*[@id=\"result_0\"]/div[1]/div[2]/span[1]/span[1]")));
+        while (attempts < 3)
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = steamUrl;
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            try
+            {
+                IWebElement webElement = wait.Until(driver => driver.FindElement(By.XPath("//*[@id=\"result_0\"]/div[1]/div[2]/span[1]/span[1]")));
 
-        string price = webElement.Text;
+                price = webElement.Text;
+                attempts = 3;
+                driver.Close();
+                break;
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                driver.Close();
+            }
 
+            attempts++;
+        }
+        
+        if (price == "")
+        {
+            price = "Couldn't get price";
+        }
         return price;
     }
 
@@ -83,3 +154,6 @@ public class Selenium
             _ => string.Concat(input[0].ToString().ToUpper(), input.AsSpan(1))
         };
 }
+
+
+

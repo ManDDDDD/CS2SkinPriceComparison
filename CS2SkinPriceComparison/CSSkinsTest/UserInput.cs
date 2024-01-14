@@ -87,7 +87,7 @@ public class UserInput
 
     private void SelectSkin(string item)
     {
-        Console.WriteLine("Enter the name of the skin (Case Sensitive):");
+        Console.WriteLine("Enter the name of the skin:");
 
         string skinName = Console.ReadLine();
 

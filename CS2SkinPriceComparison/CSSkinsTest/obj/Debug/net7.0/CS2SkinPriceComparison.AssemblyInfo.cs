@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CS2SkinPriceComparison")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9837341a0c03852ad2f6c3ffa5bf0e8bb3e8db2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("CS2SkinPriceComparison")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CS2SkinPriceComparison")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
