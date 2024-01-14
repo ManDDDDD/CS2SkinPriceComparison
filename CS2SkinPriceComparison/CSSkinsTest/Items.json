@@ -72,10 +72,5 @@
     "Specialist Gloves": "Specialist Gloves",
     "Hydra Gloves": "Hydra Gloves",
     "Broken Fang Gloves": "Broken Fang Gloves"
-  },
-  "Container": {
-    "Case": "Case",
-    "Capsule": "Capsule",
-    "Souvenir Package": "Souvenir Package"
-  },
+  }
 }

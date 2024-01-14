@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -20,12 +21,12 @@ public class Selenium
             {
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
                 IWebElement webElement = wait.Until(driver =>
-                    driver.FindElement(By.ClassName(
-                        "ItemPreview-priceValue")));
-                    price = webElement.FindElement(By.ClassName("Tooltip-link")).Text;
-                    attempts = 3;
-                    driver.Close();
-                    break;
+                    driver.FindElement(By.ClassName("ItemPreview-priceValue")));
+                price = webElement.FindElement(By.ClassName("Tooltip-link")).Text;
+                attempts = 3;
+                driver.Close();
+                break;
+
             }
             catch (WebDriverTimeoutException e)
             {
@@ -37,18 +38,14 @@ public class Selenium
 
         if (price == "")
         {
-            price = "Couldn't get price";
+            return "Couldn't get price";
         }
-        return price;
+        return Regex.Match(price, @"[0-9]+(?:[.,'´][0-9]+)?").Value.Replace(",", "");
     }
 
     public string DefineSkinPortUrl(Skin item)
     {
-        string skinPortName = item.Name.Trim().Replace(" ", "+");
-        skinPortName = FirstCharToUpper(skinPortName);
-        string skinPortUrl = $"https://skinport.com/market?cat={item.SubCategory}&type={item.Item}&item={skinPortName}&sort=price&order=asc";
-
-        return skinPortUrl;
+        return $"https://skinport.com/market?cat={item.SubCategory}&type={item.Item}&item={spaceToPlus(item.Name)}&sort=price&order=asc";
     }
 
     public string GetPricesFromSkinBaron(Skin item)
@@ -78,12 +75,13 @@ public class Selenium
 
             attempts++;
         }
-        if(price == "")
+
+        if (price == "")
         {
-            price = "Couldn't get price";
+            return "Couldn't get price";
         }
 
-        return price;
+        return Regex.Match(price, @"[0-9]+(?:[.,'´][0-9]+)?").Value.Replace(",", "");
     }
 
     public string DefineSkinBaronUrl(Skin item)
@@ -97,53 +95,48 @@ public class Selenium
         }
 
         skinBaronName = FirstCharToUpper(skinBaronName);
-        string skinBaronUrl = $"https://skinbaron.de/en/csgo/{item.SubCategory}/{item.Item}/{skinBaronName}?sort=CF";
+        string skinBaronUrl = "";
+        if (item.Category == "Gun Skin")
+        {
+            skinBaronUrl = $"https://skinbaron.de/en/csgo/{item.SubCategory}/{spaceToHyphen(item.Item.ToString())}/{skinBaronName}?sort=CF";
+        }
+        if (item.Category == "Knife")
+        {
+            skinBaronUrl = $"https://skinbaron.de/en/csgo/{item.Category}/{spaceToHyphen(item.Item.ToString())}/{skinBaronName}?sort=CF";
+        }
+        if (item.Category == "Gloves")
+        {
+            skinBaronUrl = $"https://skinbaron.de/en/csgo/{item.Category}/{spaceToHyphen(item.Item.ToString())}/{skinBaronName}?sort=CF";
+        }
 
         return skinBaronUrl;
     }
 
-    public string GetPricesFromSteam(Skin item)
+    private string spaceToHyphen(string input)
+
     {
-        int attempts = 0;
-        string price = "";
-        string steamUrl = DefineSteamUrl(item);
-
-        while (attempts < 3)
+        string result = input.Trim();
+        if (result.Contains(" "))
         {
-            IWebDriver driver = new ChromeDriver();
-            driver.Url = steamUrl;
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            try
-            {
-                IWebElement webElement = wait.Until(driver => driver.FindElement(By.XPath("//*[@id=\"result_0\"]/div[1]/div[2]/span[1]/span[1]")));
-
-                price = webElement.Text;
-                attempts = 3;
-                driver.Close();
-                break;
-            }
-            catch (WebDriverTimeoutException e)
-            {
-                driver.Close();
-            }
-
-            attempts++;
+            string[] splitted = result.Split(" ");
+            FirstCharToUpper(splitted[1]);
+            result = string.Join("-", splitted);
         }
-        
-        if (price == "")
-        {
-            price = "Couldn't get price";
-        }
-        return price;
+
+        return result;
     }
+    private string spaceToPlus(string input)
 
-    public string DefineSteamUrl(Skin item)
     {
-        string steamName = item.Name.Trim().Replace(" ", "+").Replace("-", "");
-        string steamItem = item.Item.ToString().ToLower().Replace("-", "");
-        string steamUrl = $"https://steamcommunity.com/market/search?q={steamName}&category_730_ItemSet%5B%5D=any&category_730_ProPlayer%5B%5D=any&category_730_StickerCapsule%5B%5D=any&category_730_TournamentTeam%5B%5D=any&category_730_Weapon%5B%5D=tag_weapon_{steamItem}&appid=730#p1_price_asc";
+        string result = input.Trim();
+        if (result.Contains(" "))
+        {
+            string[] splitted = result.Split(" ");
+            FirstCharToUpper(splitted[1]);
+            result = string.Join("+", splitted);
+        }
 
-        return steamUrl;
+        return result;
     }
 
     public string FirstCharToUpper(string input) =>
