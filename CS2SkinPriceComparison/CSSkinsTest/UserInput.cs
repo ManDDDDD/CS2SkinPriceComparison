@@ -99,8 +99,13 @@ public class UserInput
         {
             skin.Name = skinName;
             Selenium selenium = new Selenium();
-            // selenium.GetPricesFromSkinBaron(skin);
-            // selenium.GetPricesFromSkinPort(skin);
+            string skinPortPrice = selenium.GetPricesFromSkinPort(skin);
+            string skinBaronPrice = selenium.GetPricesFromSkinBaron(skin);
+            string steamPrice = selenium.GetPricesFromSteam(skin);
+
+            Console.WriteLine($"SkinPort Price: {skinPortPrice}");
+            Console.WriteLine($"SkinBaron Price: {skinBaronPrice}");
+            Console.WriteLine($"Steam Price: {steamPrice}");
         }
         
     } 
