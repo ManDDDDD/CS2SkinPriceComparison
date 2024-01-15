@@ -1,15 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "q/yXkfOCHIiA7zb4kZx9G5L58oYe1fY5AAg3mHkvz4MRO0b8gJvRGo74bVqu8dVmsKj3qHFF+X4CsRWhgLns1w==",
+  "dgSpecHash": "YkSloKxVvTnGHyII3LZE1etVWx1l7bg6YHenwT2ZObYO/alfx0rwQto0l3+guxaNcNIVLxcOjQyWHGiooad3yQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\colin\\OneDrive\\Dokumente\\GIBZ\\m450\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\CSSkinsTest\\CS2SkinPriceComparison.csproj",
+  "projectFilePath": "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\CSSkinsTest\\CS2SkinPriceComparison.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\colin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\colin\\.nuget\\packages\\selenium.webdriver\\4.16.2\\selenium.webdriver.4.16.2.nupkg.sha512",
-    "C:\\Users\\colin\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\colin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\colin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\colin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.15\\microsoft.netcore.app.host.win-x64.7.0.15.nupkg.sha512"
+    "C:\\Users\\Amando Eriksson\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Amando Eriksson\\.nuget\\packages\\selenium.webdriver\\4.16.2\\selenium.webdriver.4.16.2.nupkg.sha512"
   ],
   "logs": []
 }

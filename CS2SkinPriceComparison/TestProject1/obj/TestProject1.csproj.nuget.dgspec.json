@@ -1,0 +1,146 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\TestProject1\\TestProject1.csproj": {}
+  },
+  "projects": {
+    "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\CSSkinsTest\\CS2SkinPriceComparison.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\CSSkinsTest\\CS2SkinPriceComparison.csproj",
+        "projectName": "CS2SkinPriceComparison",
+        "projectPath": "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\CSSkinsTest\\CS2SkinPriceComparison.csproj",
+        "packagesPath": "C:\\Users\\Amando Eriksson\\.nuget\\packages\\",
+        "outputPath": "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\CSSkinsTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Amando Eriksson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.16.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\TestProject1\\TestProject1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\TestProject1\\TestProject1.csproj",
+        "projectName": "TestProject1",
+        "projectPath": "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\TestProject1\\TestProject1.csproj",
+        "packagesPath": "C:\\Users\\Amando Eriksson\\.nuget\\packages\\",
+        "outputPath": "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\TestProject1\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Amando Eriksson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\CSSkinsTest\\CS2SkinPriceComparison.csproj": {
+                "projectPath": "D:\\CodingProjects\\CS2SkinPriceComparison\\CS2SkinPriceComparison\\CSSkinsTest\\CS2SkinPriceComparison.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.6.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
