@@ -13,7 +13,7 @@ public class Selenium
         string skinPortUrl = DefineSkinPortUrl(item);
         int attempts = 0;
         string price = "";
-        while (attempts < 3)
+        while (attempts < 5)
         {
             IWebDriver driver = new ChromeDriver();
             driver.Url = skinPortUrl;
@@ -40,7 +40,7 @@ public class Selenium
         {
             return "Couldn't get price";
         }
-        return Regex.Match(price, @"[0-9]+(?:[.,'´][0-9]+)?").Value.Replace(",", "");
+        return Regex.Match(price, @"[0-9]+(?:[.,'´][0-9]+)?").Value;
     }
 
     public string DefineSkinPortUrl(Skin item)
@@ -81,7 +81,7 @@ public class Selenium
             return "Couldn't get price";
         }
 
-        return Regex.Match(price, @"[0-9]+(?:[.,'´][0-9]+)?").Value.Replace(",", "");
+        return Regex.Match(price, @"[0-9]+(?:[.,'´][0-9]+)?").Value;
     }
 
     public string DefineSkinBaronUrl(Skin item)

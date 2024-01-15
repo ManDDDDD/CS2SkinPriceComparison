@@ -40,7 +40,7 @@ public class UserInput
                 break;
         }
     }
-    
+
     private void SelectSubType(JObject subType)
     {
         Console.Clear();
@@ -53,8 +53,8 @@ public class UserInput
             index++;
         }
         string selection = Console.ReadLine();
-        
-        if(!int.TryParse(selection, out int intSelection))
+
+        if (!int.TryParse(selection, out int intSelection))
         {
             Console.WriteLine("Invalid selection. Please try again:");
             SelectSubType(subType);
@@ -67,12 +67,12 @@ public class UserInput
         else
         {
             string selectedSubType = subTypeKey[intSelection - 1];
-            if(subType[selectedSubType] is JObject)
+            if (subType[selectedSubType] is JObject)
             {
                 skin.SubCategory = selectedSubType;
                 SelectSubType((JObject)subType[selectedSubType]);
             }
-            else if(subType[selectedSubType] is JValue)
+            else if (subType[selectedSubType] is JValue)
             {
                 skin.Item = subType[selectedSubType];
                 SelectSkin((string)subType[selectedSubType]);
@@ -102,9 +102,56 @@ public class UserInput
             string skinPortPrice = selenium.GetPricesFromSkinPort(skin);
             string skinBaronPrice = selenium.GetPricesFromSkinBaron(skin);
 
-            Console.WriteLine($"SkinPort Price: {skinPortPrice}");
-            Console.WriteLine($"SkinBaron Price: {skinBaronPrice}");
+
+            if (skinPortPrice == "Couldn't get price")
+            {
+                Console.WriteLine($"{skinPortPrice}");
+            }
+            else
+            {
+                Console.WriteLine($"SkinPort Price: CHF {skinPortPrice}");
+            }
+
+            if (skinBaronPrice == "Couldn't get price")
+            {
+                Console.WriteLine($"{skinBaronPrice}");
+            }
+            else
+            {
+                decimal skinBaronPriceInCHF = GetCHFPriceFromEUR(Convert.ToDecimal(skinBaronPrice), "EUR").Result;
+                Console.WriteLine($"SkinBaron Price: CHF {Math.Round(skinBaronPriceInCHF, 2)}");
+            }
         }
-        
-    } 
+
+    }
+
+    public async Task<decimal> GetCHFPriceFromEUR(decimal inputPrice, string currency)
+    {
+        string apiUrl = $"https://open.er-api.com/v6/latest/{currency}";
+
+        using (HttpClient client = new HttpClient())
+        {
+            try
+            {
+                string json = await client.GetStringAsync(apiUrl);
+                JObject exchangeRates = JObject.Parse(json);
+
+                if (exchangeRates["result"].ToString() == "success")
+                {
+                    decimal chfRate = (decimal)exchangeRates["rates"]["CHF"];
+                    decimal chfPrice = inputPrice * chfRate;
+                    return chfPrice;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine($"Error retrieving exchange rates: {ex.Message}");
+            }
+        }
+        return 0;
+    }
 }
