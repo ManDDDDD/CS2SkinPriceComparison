@@ -30,10 +30,6 @@ public class UserInput
                 skin.Category = "Gloves";
                 SelectSubType((JObject)_jsonItems["Gloves"]);
                 break;
-            case "4":
-                skin.Category = "Container";
-                SelectSubType((JObject)_jsonItems["Container"]);
-                break;
             default:
                 Console.WriteLine("Invalid selection. Please try again:");
                 SelectItemType();
