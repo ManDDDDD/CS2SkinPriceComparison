@@ -34,4 +34,4 @@ Alle Tests welche unabhängig von Selenium agieren funktionieren einwandfrei.
 
 Trotz des Fehlers bei Selenium ist unser Programm meist fehlerfrei und kann erfolgreich die Preise von jeweils Skinport, als auch SkinBaron vergleichen. Ein User kann nun wie bereits beschrieben seinen gewählten Skin auf den zwei Plattformen vergleichen.
 
-(#sdfootnote1anc) \*Die Marktplätze stehen in keinem Zusammenhang mit dem Projekt
+\*Die Marktplätze stehen in keinem Zusammenhang mit dem Projekt
