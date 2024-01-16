@@ -27,13 +27,13 @@ public class Selenium
                     driver.FindElement(By.ClassName("ItemPreview-priceValue")));
                 price = webElement.FindElement(By.ClassName("Tooltip-link")).Text;
                 attempts = 3;
-                driver.Close();
+                driver.Dispose();
                 break;
 
             }
-            catch (WebDriverTimeoutException e)
+            catch (WebDriverTimeoutException)
             {
-                driver.Close();
+                driver.Dispose();
             }
 
             attempts++;
@@ -66,16 +66,26 @@ public class Selenium
             
             try
             {
-                IWebElement webElement = wait.Until(driver => driver.FindElement(By.XPath("//*[@id=\"offer-container\"]/sb-products-item-card[1]/div/a/div/div[5]/div/span")));
+                try
+                {
+                    IWebElement webElement = wait.Until(driver =>
+                        driver.FindElement(By.XPath(
+                            "//*[@id=\"offer-container\"]/sb-products-item-card[1]/div/a/div/div[5]/div/span")));
 
-                price = webElement.Text;
-                attempts = 3;
-                driver.Close();
-                break;
+                    price = webElement.Text;
+                    attempts = 3;
+                    driver.Dispose();
+                    break;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    driver.Dispose();
+                }
+                
             }
-            catch (WebDriverTimeoutException e)
+            catch (WebDriverTimeoutException)
             {
-                driver.Close();
+                driver.Dispose();
             }
 
             attempts++;

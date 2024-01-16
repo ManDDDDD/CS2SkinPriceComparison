@@ -4,14 +4,16 @@ using Newtonsoft.Json.Linq;
 
 public class UserInput
 {
+    // load json file using the JsonReader class
     private static JObject _jsonItems = JsonReader.LoadJson("../../../Items.json");
-    private static IList<string> keys = _jsonItems.Properties().Select(p => p.Name).ToList();
-    public Skin skin = new Skin();
+    private static IList<string> _keys = _jsonItems.Properties().Select(p => p.Name).ToList();
+    private readonly Skin _skin = new Skin();
     public void SelectItemType()
     {
-        for (int i = 0; i < keys.Count; i++)
+        Console.WriteLine("Select a category:");
+        for (int i = 0; i < _keys.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {keys[i]}");
+            Console.WriteLine($"{i + 1}. {_keys[i]}");
         }
 
         string selection = Console.ReadLine();
@@ -19,15 +21,15 @@ public class UserInput
         switch (selection)
         {
             case "1":
-                skin.Category = "Gun Skin";
+                _skin.Category = "Gun Skin";
                 SelectSubType((JObject)_jsonItems["Gun Skin"]);
                 break;
             case "2":
-                skin.Category = "Knife";
+                _skin.Category = "Knife";
                 SelectSubType((JObject)_jsonItems["Knife"]);
                 break;
             case "3":
-                skin.Category = "Gloves";
+                _skin.Category = "Gloves";
                 SelectSubType((JObject)_jsonItems["Gloves"]);
                 break;
             default:
@@ -42,6 +44,14 @@ public class UserInput
         Console.Clear();
         List<string> subTypeKey = (subType).Properties().Select(p => p.Name).ToList();
         int index = 1;
+        if(_skin.SubCategory != null)
+        {
+            Console.WriteLine("Current Selection: " + _skin.SubCategory);
+        }
+        else
+        {
+            Console.WriteLine("Current Selection: " + _skin.Category);
+        }
         Console.WriteLine("Select a Gun Type:");
         foreach (string item in subTypeKey)
         {
@@ -65,12 +75,12 @@ public class UserInput
             string selectedSubType = subTypeKey[intSelection - 1];
             if (subType[selectedSubType] is JObject)
             {
-                skin.SubCategory = selectedSubType;
+                _skin.SubCategory = selectedSubType;
                 SelectSubType((JObject)subType[selectedSubType]);
             }
             else if (subType[selectedSubType] is JValue)
             {
-                skin.Item = subType[selectedSubType];
+                _skin.Item = subType[selectedSubType];
                 SelectSkin((string)subType[selectedSubType]);
             }
             else
@@ -83,6 +93,8 @@ public class UserInput
 
     private void SelectSkin(string item)
     {
+        Console.Clear();
+        Console.WriteLine("Current Selection: " + _skin.Item);
         Console.WriteLine("Enter the name of the skin:");
 
         string skinName = Console.ReadLine();
@@ -93,12 +105,13 @@ public class UserInput
         }
         else
         {
-            skin.Name = skinName;
+            _skin.Name = skinName;
             Selenium selenium = new Selenium();
-            string skinPortPrice = selenium.GetPricesFromSkinPort(skin);
-            string skinBaronPrice = selenium.GetPricesFromSkinBaron(skin);
+            string skinPortPrice = selenium.GetPricesFromSkinPort(_skin);
+            string skinBaronPrice = selenium.GetPricesFromSkinBaron(_skin);
 
-
+            Console.Clear();
+            Console.WriteLine($"{_skin.Item} | {selenium.FirstCharToUpper(_skin.Name)}");
             if (skinPortPrice == "Couldn't get price")
             {
                 Console.WriteLine($"{skinPortPrice}");
@@ -114,8 +127,8 @@ public class UserInput
             }
             else
             {
-                decimal skinBaronPriceInCHF = GetCHFPriceFromEUR(Convert.ToDecimal(skinBaronPrice), "EUR").Result;
-                Console.WriteLine($"SkinBaron Price: CHF {Math.Round(skinBaronPriceInCHF, 2)}");
+                decimal skinBaronPriceInChf = GetCHFPriceFromEUR(Convert.ToDecimal(skinBaronPrice), "EUR").Result;
+                Console.WriteLine($"SkinBaron Price: CHF {Math.Round(skinBaronPriceInChf, 2)}");
             }
         }
 
