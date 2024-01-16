@@ -7,16 +7,20 @@ namespace CS2SkinPriceComparison.Tests
     public class SeleniumTests
     {
         [TestMethod]
-        public void TestGetPricesFromSkinPort()
+        [DataRow("Fuel Injector", "Gun Skin", "Rifle", "AK-47")]
+        [DataRow("Tiger Tooth", "Knife", "", "Karambit")]
+        [DataRow("Omega", "Gloves", "", "Sport Gloves")]
+        [DataRow("Autotronic", "Knife", "", "Gut Knife")]
+        public void TestGetPricesFromSkinPort(string name, string category, string subCategory, string item)
         {
             // Arrange
-            var selenium = new Selenium();
-            var skin = new Skin
+            Selenium selenium = new Selenium();
+            Skin skin = new Skin
             {
-                Name = "TestSkin",
-                Category = "Gun Skin",
-                SubCategory = "Rifle",
-                Item = "AK-47"
+                Name = name,
+                Category = category,
+                SubCategory = subCategory,
+                Item = item
             };
 
             // Act
@@ -24,20 +28,44 @@ namespace CS2SkinPriceComparison.Tests
 
             // Assert
             Assert.IsNotNull(price, "Price should not be null");
-            // Add more assertions based on the expected behavior of GetPricesFromSkinPort
+        }
+        
+        [TestMethod]
+        [DataRow("Invalid Skin Name", "Gun Skin", "Rifle", "AK-47")]
+        public void GetPricesFromSkinportWithInvalidSkinShouldReturnErrorMessage(string name, string category, string subCategory, string item)
+        {
+            // Arrange
+            Selenium selenium = new Selenium();
+            Skin skin = new Skin
+            {
+                Name = name,
+                Category = category,
+                SubCategory = subCategory,
+                Item = item
+            };
+
+            // Act
+            string price = selenium.GetPricesFromSkinPort(skin);
+
+            // Assert
+            Assert.AreEqual("Couldn't get price", price, "Price should be 'Couldn't get price'");
         }
 
         [TestMethod]
-        public void TestDefineSkinPortUrl()
+        [DataRow("Fuel Injector", "Gun Skin", "Rifle", "AK-47")]
+        [DataRow("Tiger Tooth", "Knife", "", "Karambit")]
+        [DataRow("Omega", "Gloves", "", "Sport Gloves")]
+        [DataRow("Autotronic", "Knife", "", "Gut Knife")]
+        public void TestDefineSkinPortUrl(string name, string category, string subCategory, string item)
         {
             // Arrange
-            var selenium = new Selenium();
-            var skin = new Skin
+            Selenium selenium = new Selenium();
+            Skin skin = new Skin
             {
-                Name = "TestSkin",
-                Category = "Gun Skin",
-                SubCategory = "Rifle",
-                Item = "AK-47"
+                Name = name,
+                Category = category,
+                SubCategory = subCategory,
+                Item = item
             };
 
             // Act
@@ -45,20 +73,23 @@ namespace CS2SkinPriceComparison.Tests
 
             // Assert
             Assert.IsNotNull(url, "URL should not be null");
-            // Add more assertions based on the expected behavior of DefineSkinPortUrl
         }
 
         [TestMethod]
-        public void TestGetPricesFromSkinBaron()
+        [DataRow("Fuel Injector", "Gun Skin", "Rifle", "AK-47")]
+        [DataRow("Tiger Tooth", "Knife", "", "Karambit")]
+        [DataRow("Omega", "Gloves", "", "Sport Gloves")]
+        [DataRow("Autotronic", "Knife", "", "Gut Knife")]
+        public void TestGetPricesFromSkinbaron(string name, string category, string subCategory, string item)
         {
             // Arrange
-            var selenium = new Selenium();
-            var skin = new Skin
+            Selenium selenium = new Selenium();
+            Skin skin = new Skin
             {
-                Name = "TestSkin",
-                Category = "Gun Skin",
-                SubCategory = "Rifle",
-                Item = "AK-47"
+                Name = name,
+                Category = category,
+                SubCategory = subCategory,
+                Item = item
             };
 
             // Act
@@ -66,20 +97,44 @@ namespace CS2SkinPriceComparison.Tests
 
             // Assert
             Assert.IsNotNull(price, "Price should not be null");
-            // Add more assertions based on the expected behavior of GetPricesFromSkinBaron
+        }
+        
+        [TestMethod]
+        [DataRow("Invalid Skin Name", "Gun Skin", "Rifle", "AK-47")]
+        public void GetPricesFromSkinbaronWithInvalidSkinShouldReturnErrorMessage(string name, string category, string subCategory, string item)
+        {
+            // Arrange
+            Selenium selenium = new Selenium();
+            Skin skin = new Skin
+            {
+                Name = name,
+                Category = category,
+                SubCategory = subCategory,
+                Item = item
+            };
+
+            // Act
+            string price = selenium.GetPricesFromSkinBaron(skin);
+
+            // Assert
+            Assert.AreEqual("Couldn't get price", price, "Price should be 'Couldn't get price'");
         }
 
         [TestMethod]
-        public void TestDefineSkinBaronUrl()
+        [DataRow("Fuel Injector", "Gun Skin", "Rifle", "AK-47")]
+        [DataRow("Tiger Tooth", "Knife", "", "Karambit")]
+        [DataRow("Omega", "Gloves", "", "Sport Gloves")]
+        [DataRow("Autotronic", "Knife", "", "Gut Knife")]
+        public void TestDefineSkinbaronUrl(string name, string category, string subCategory, string item)
         {
             // Arrange
-            var selenium = new Selenium();
-            var skin = new Skin
+            Selenium selenium = new Selenium();
+            Skin skin = new Skin
             {
-                Name = "TestSkin",
-                Category = "Gun Skin",
-                SubCategory = "Rifle",
-                Item = "AK-47"
+                Name = name,
+                Category = category,
+                SubCategory = subCategory,
+                Item = item
             };
 
             // Act
@@ -87,54 +142,61 @@ namespace CS2SkinPriceComparison.Tests
 
             // Assert
             Assert.IsNotNull(url, "URL should not be null");
-            // Add more assertions based on the expected behavior of DefineSkinBaronUrl
         }
 
         [TestMethod]
-        public void SpaceToHyphen_ShouldReplaceSpacesWithHyphens()
+        [DataRow("test", "Test")]
+        [DataRow("THis is a SentEnce", "This-Is-A-Sentence")]
+        [DataRow(" test SenTence ", "Test-Sentence")]
+        [DataRow("", "")]
+        [DataRow(" ", "")]
+        public void SpaceToHyphen_ShouldReplaceSpacesWithHyphens(string input, string expectedResult)
         {
             // Arrange
-            var selenium = new Selenium();
-            string input = "Test Skin";
+            Selenium selenium = new Selenium();
 
             // Act
             string result = selenium.SpaceToHyphen(input);
 
             // Assert
-            Assert.AreEqual("Test-Skin", result, "Result should match");
-            // Add more assertions based on the expected behavior of SpaceToHyphen
+            Assert.AreEqual(expectedResult, result, "Result should match");
         }
 
         [TestMethod]
+        [DataRow("test", "Test")]
+        [DataRow("THis is a SentEnce", "This+Is+A+Sentence")]
+        [DataRow(" test SenTence ", "Test+Sentence")]
+        [DataRow("", "")]
+        [DataRow(" ", "")]
         public void SpaceToPlus_ShouldReplaceSpacesWithPluses(string input, string expectedResult)
         {
             // Arrange
-            var selenium = new Selenium();
+            Selenium selenium = new Selenium();
 
             // Act
             string result = selenium.SpaceToPlus(input);
 
             // Assert
             Assert.AreEqual(expectedResult, result, "Result should match");
-            // Add more assertions based on the expected behavior of SpaceToPlus
         }
 
         [TestMethod]
         [DataRow("test", "Test")]
         [DataRow("Test", "Test")]
         [DataRow(" asiimov", "Asiimov")]
-        
+        [DataRow(" thiS iS a TeSt sTring ", "This Is A Test String")]
+        [DataRow("", "")]
+        [DataRow(" ", "")]
         public void FirstCharToUpper_ShouldCapitalizeFirstLetter(string input, string expectedResult)
         {
             // Arrange
-            var selenium = new Selenium();
+            Selenium selenium = new Selenium();
 
             // Act
             string result = selenium.FirstCharToUpper(input);
 
             // Assert
             Assert.AreEqual(expectedResult, result, "Result should match");
-            // Add more assertions based on the expected behavior of FirstCharToUpper
         }
     }
 }

@@ -94,8 +94,7 @@ public class Selenium
         string skinBaronUrl = "";
         if (item.Category == "Gun Skin")
         {
-            skinBaronUrl = $"https://skinbaron.de/en/csgo/{item.SubCategory}/{SpaceToHyphen(item.Item.ToString()).ToUpper()}/{SpaceToHyphen(item.Name)}?sort=CF";
-            Console.WriteLine(skinBaronUrl);
+            skinBaronUrl = $"https://skinbaron.de/en/csgo/{item.SubCategory}/{item.Item.ToString().Replace(" ", "-")}/{SpaceToHyphen(item.Name)}?sort=CF";
         }
         if (item.Category == "Knife")
         {
@@ -111,6 +110,10 @@ public class Selenium
 
     public string SpaceToHyphen(string input)
     {
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            return input.Trim();
+        }
         string result = FirstCharToUpper(input);
         if (result.Contains(" "))
         {
@@ -123,6 +126,10 @@ public class Selenium
 
     public string SpaceToPlus(string input)
     {
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            return input.Trim();
+        }
         string result = FirstCharToUpper(input);
         if (result.Contains(" "))
         {
@@ -136,6 +143,10 @@ public class Selenium
 
     public string FirstCharToUpper(string input)
     {
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            return input.Trim();
+        }
         string result = input.Trim().ToLower();
         string[] splitted = result.Split(" ");
 
